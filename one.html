@@ -15,21 +15,6 @@
       }
     </script> -->
 <body>
-    <h1>这是一个点赞按钮</h1>
-    <button id="dzs" onclick="dianZan()">0</button>
-    <script>
-        function dianZan(uid, bv){
-            let jilu = database.get('点赞记录',uid,bv);
-            if(jilu){
-                let dianZanShu=database.jian('点赞数',bv,1);
-                database.shanChu('点赞记录',uid,bv);
-                document.getElementById('dzs').innerText=dianZanShu;
-            }else{
-                let dianZanShu=database.jia('点赞数',bv,1);
-                database.tianJia('点赞记录',uid,bv);
-                document.getElementById('dzs').innerText=dianZanShu;
-            }
-        }
-    </script>
+    <h1>猎龙驯龙调教龙</h1>
 </body>
 </html>
