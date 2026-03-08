@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!-- <script>
+      function dianZan(){
+        let dianZanShuBiaoQian = window.document.getElementById('dzs');
+        let dianZanShu = parseInt(dianZanShuBiaoQian.innerText);
+        let xinShuZi = dianZanShu +1;
+        dianZanShuBiaoQian.innerText = xinShuZi;
+        return
+      }
+    </script> -->
+<body>
+    <h1>这是一个点赞按钮</h1>
+    <button id="dzs" onclick="dianZan()">0</button>
+    <script>
+        function dianZan(uid, bv){
+            let jilu = database.get('点赞记录',uid,bv);
+            if(jilu){
+                let dianZanShu=database.jian('点赞数',bv,1);
+                database.shanChu('点赞记录',uid,bv);
+                document.getElementById('dzs').innerText=dianZanShu;
+            }else{
+                let dianZanShu=database.jia('点赞数',bv,1);
+                database.tianJia('点赞记录',uid,bv);
+                document.getElementById('dzs').innerText=dianZanShu;
+            }
+        }
+    </script>
+</body>
+</html>
